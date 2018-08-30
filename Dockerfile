@@ -26,7 +26,6 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
     locales \
     mysql-client \
     default-libmysqlclient-dev \
-    nodejs \
     ssh \
     libimage-exiftool-perl \
     libreadline-dev \
@@ -34,6 +33,8 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
     sudo \
     tzdata \
     wget \
+&&  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
+&&  apt-get install -y nodejs \
 &&  apt-get clean \
 &&  rm -rf /var/lib/apt/lists/* \
 &&  locale-gen ja_JP.UTF-8 \
